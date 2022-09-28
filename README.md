@@ -2,6 +2,13 @@
 
 This repository enables Swift Package Manager support for the AWS Mobile SDK for iOS by vending a Manifest file (`Package.swift`) that links to binary frameworks for the SDKs.
 
+## Changes for Mac Catalyst
+
+Switched to use `localWithFilesystem` mode, the mode is chosen both for including only what is compiled in forked [aws-sdk-ios](https://github.com/samkudr/aws-sdk-ios) and to use binaries from this repository (vs. what is hosted online by AWS Amplify). In order to keep everything online the XCF directory is added to the repository (with `--force` flag).
+See also [Local Development](#local-development) below.
+
+Version tags are +1 from the [source](https://github.com/aws-amplify/aws-sdk-ios-spm) for the patch portion (may be changed later to this repository own versions).
+
 ## Setup
 
 To get started with the AWS SDK for iOS, check out the [Developer Guide for iOS](https://aws-amplify.github.io/docs/ios/start). You can set up the SDK and start building a new project, or you integrate the SDK in an existing project.
